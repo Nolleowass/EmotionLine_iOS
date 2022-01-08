@@ -12,5 +12,8 @@ target 'EmotionLine' do
   pod 'SnapKit'
   pod 'Then'
   pod 'Moya/RxSwift'
+  pod 'RxViewController'
+  pod 'Charts'
+  pod 'RxDataSources'
 
 end

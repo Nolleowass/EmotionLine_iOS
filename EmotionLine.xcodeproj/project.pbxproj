@@ -10,10 +10,24 @@
 		CD3C65F61DAB8E2A52FF0310 /* Pods_EmotionLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA885DE938F09B7D835AC07A /* Pods_EmotionLine.framework */; };
 		F234C8D22789881F00504FA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C8D12789881F00504FA4 /* AppDelegate.swift */; };
 		F234C8D42789881F00504FA4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C8D32789881F00504FA4 /* SceneDelegate.swift */; };
-		F234C8D62789881F00504FA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C8D52789881F00504FA4 /* ViewController.swift */; };
-		F234C8D92789881F00504FA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F234C8D72789881F00504FA4 /* Main.storyboard */; };
 		F234C8DB2789882000504FA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F234C8DA2789882000504FA4 /* Assets.xcassets */; };
 		F234C8DE2789882000504FA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F234C8DC2789882000504FA4 /* LaunchScreen.storyboard */; };
+		F234C8EC2789A02400504FA4 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C8EB2789A02400504FA4 /* Diary.swift */; };
+		F234C8EE2789A02E00504FA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C8ED2789A02E00504FA4 /* User.swift */; };
+		F234C8F12789A67200504FA4 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C8F02789A67200504FA4 /* Network.swift */; };
+		F234C9042789AB3200504FA4 /* SplashViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C9022789AB3200504FA4 /* SplashViewReactor.swift */; };
+		F234C9052789AB3200504FA4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C9032789AB3200504FA4 /* SplashViewController.swift */; };
+		F234C9072789AE9B00504FA4 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C9062789AE9B00504FA4 /* UserDefaultsService.swift */; };
+		F234C90A2789B2A200504FA4 /* FeedViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C9082789B2A200504FA4 /* FeedViewReactor.swift */; };
+		F234C90B2789B2A200504FA4 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C9092789B2A200504FA4 /* FeedViewController.swift */; };
+		F234C90E2789B44500504FA4 /* LoginViewReactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C90C2789B44500504FA4 /* LoginViewReactor.swift */; };
+		F234C90F2789B44500504FA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C90D2789B44500504FA4 /* LoginViewController.swift */; };
+		F234C9132789B64E00504FA4 /* RequestLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C9122789B64E00504FA4 /* RequestLoggingPlugin.swift */; };
+		F234C9162789B67F00504FA4 /* EmotionLineAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F234C9152789B67F00504FA4 /* EmotionLineAPI.swift */; };
+		F275B3272789B6D200334301 /* BaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F275B3262789B6D200334301 /* BaseAPI.swift */; };
+		F275B3292789BD7E00334301 /* EmotionLineService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F275B3282789BD7E00334301 /* EmotionLineService.swift */; };
+		F275B32B2789DBDA00334301 /* Emotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F275B32A2789DBDA00334301 /* Emotion.swift */; };
+		F275B32E2789DCBE00334301 /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F275B32D2789DCBE00334301 /* IndicatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,11 +37,25 @@
 		F234C8CE2789881F00504FA4 /* EmotionLine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionLine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F234C8D12789881F00504FA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F234C8D32789881F00504FA4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F234C8D52789881F00504FA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F234C8D82789881F00504FA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F234C8DA2789882000504FA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F234C8DD2789882000504FA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F234C8DF2789882000504FA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F234C8EB2789A02400504FA4 /* Diary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diary.swift; sourceTree = "<group>"; };
+		F234C8ED2789A02E00504FA4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F234C8F02789A67200504FA4 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		F234C9022789AB3200504FA4 /* SplashViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewReactor.swift; sourceTree = "<group>"; };
+		F234C9032789AB3200504FA4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		F234C9062789AE9B00504FA4 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		F234C9082789B2A200504FA4 /* FeedViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewReactor.swift; sourceTree = "<group>"; };
+		F234C9092789B2A200504FA4 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		F234C90C2789B44500504FA4 /* LoginViewReactor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewReactor.swift; sourceTree = "<group>"; };
+		F234C90D2789B44500504FA4 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		F234C9122789B64E00504FA4 /* RequestLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLoggingPlugin.swift; sourceTree = "<group>"; };
+		F234C9152789B67F00504FA4 /* EmotionLineAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionLineAPI.swift; sourceTree = "<group>"; };
+		F275B3262789B6D200334301 /* BaseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAPI.swift; sourceTree = "<group>"; };
+		F275B3282789BD7E00334301 /* EmotionLineService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionLineService.swift; sourceTree = "<group>"; };
+		F275B32A2789DBDA00334301 /* Emotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emotion.swift; sourceTree = "<group>"; };
+		F275B32D2789DCBE00334301 /* IndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +84,6 @@
 				0F111E59EB89F52513106A04 /* Pods-EmotionLine.debug.xcconfig */,
 				A42B4BAAD913FB6A740CC09D /* Pods-EmotionLine.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +108,133 @@
 		F234C8D02789881F00504FA4 /* EmotionLine */ = {
 			isa = PBXGroup;
 			children = (
-				F234C8D12789881F00504FA4 /* AppDelegate.swift */,
-				F234C8D32789881F00504FA4 /* SceneDelegate.swift */,
-				F234C8D52789881F00504FA4 /* ViewController.swift */,
-				F234C8D72789881F00504FA4 /* Main.storyboard */,
+				F234C8DF2789882000504FA4 /* Info.plist */,
 				F234C8DA2789882000504FA4 /* Assets.xcassets */,
 				F234C8DC2789882000504FA4 /* LaunchScreen.storyboard */,
-				F234C8DF2789882000504FA4 /* Info.plist */,
+				F234C8D12789881F00504FA4 /* AppDelegate.swift */,
+				F234C8D32789881F00504FA4 /* SceneDelegate.swift */,
+				F234C8E627899EFB00504FA4 /* Entities */,
+				F234C8EF2789A64900504FA4 /* Repository */,
+				F234C8F22789A7A100504FA4 /* Services */,
+				F234C8E527899EF400504FA4 /* Modules */,
+				F275B32C2789DC9400334301 /* View */,
 			);
 			path = EmotionLine;
+			sourceTree = "<group>";
+		};
+		F234C8E527899EF400504FA4 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F234C8FD2789A92300504FA4 /* Splash */,
+				F234C8FC2789A91D00504FA4 /* Login */,
+				F234C8F92789A88600504FA4 /* Feed */,
+				F234C8FB2789A89400504FA4 /* Write */,
+				F234C8FA2789A88A00504FA4 /* Profile */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F234C8E627899EFB00504FA4 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F234C8EB2789A02400504FA4 /* Diary.swift */,
+				F234C8ED2789A02E00504FA4 /* User.swift */,
+				F275B32A2789DBDA00334301 /* Emotion.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F234C8EF2789A64900504FA4 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				F234C8F02789A67200504FA4 /* Network.swift */,
+				F234C9142789B67400504FA4 /* API */,
+				F234C9112789B63C00504FA4 /* Plugin */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		F234C8F22789A7A100504FA4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F275B3282789BD7E00334301 /* EmotionLineService.swift */,
+				F234C9062789AE9B00504FA4 /* UserDefaultsService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F234C8F92789A88600504FA4 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				F234C9102789B4BB00504FA4 /* Sections */,
+				F234C9082789B2A200504FA4 /* FeedViewReactor.swift */,
+				F234C9092789B2A200504FA4 /* FeedViewController.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		F234C8FA2789A88A00504FA4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		F234C8FB2789A89400504FA4 /* Write */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Write;
+			sourceTree = "<group>";
+		};
+		F234C8FC2789A91D00504FA4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F234C90C2789B44500504FA4 /* LoginViewReactor.swift */,
+				F234C90D2789B44500504FA4 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F234C8FD2789A92300504FA4 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F234C9022789AB3200504FA4 /* SplashViewReactor.swift */,
+				F234C9032789AB3200504FA4 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		F234C9102789B4BB00504FA4 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		F234C9112789B63C00504FA4 /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				F234C9122789B64E00504FA4 /* RequestLoggingPlugin.swift */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		F234C9142789B67400504FA4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F275B3262789B6D200334301 /* BaseAPI.swift */,
+				F234C9152789B67F00504FA4 /* EmotionLineAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F275B32C2789DC9400334301 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F275B32D2789DCBE00334301 /* IndicatorView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +299,6 @@
 			files = (
 				F234C8DE2789882000504FA4 /* LaunchScreen.storyboard in Resources */,
 				F234C8DB2789882000504FA4 /* Assets.xcassets in Resources */,
-				F234C8D92789881F00504FA4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,23 +351,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F234C8D62789881F00504FA4 /* ViewController.swift in Sources */,
+				F275B3292789BD7E00334301 /* EmotionLineService.swift in Sources */,
 				F234C8D22789881F00504FA4 /* AppDelegate.swift in Sources */,
+				F234C8EC2789A02400504FA4 /* Diary.swift in Sources */,
+				F234C9042789AB3200504FA4 /* SplashViewReactor.swift in Sources */,
+				F275B32E2789DCBE00334301 /* IndicatorView.swift in Sources */,
+				F275B3272789B6D200334301 /* BaseAPI.swift in Sources */,
+				F234C90F2789B44500504FA4 /* LoginViewController.swift in Sources */,
+				F234C9052789AB3200504FA4 /* SplashViewController.swift in Sources */,
+				F275B32B2789DBDA00334301 /* Emotion.swift in Sources */,
+				F234C9072789AE9B00504FA4 /* UserDefaultsService.swift in Sources */,
+				F234C8EE2789A02E00504FA4 /* User.swift in Sources */,
+				F234C8F12789A67200504FA4 /* Network.swift in Sources */,
+				F234C90A2789B2A200504FA4 /* FeedViewReactor.swift in Sources */,
 				F234C8D42789881F00504FA4 /* SceneDelegate.swift in Sources */,
+				F234C90B2789B2A200504FA4 /* FeedViewController.swift in Sources */,
+				F234C9162789B67F00504FA4 /* EmotionLineAPI.swift in Sources */,
+				F234C90E2789B44500504FA4 /* LoginViewReactor.swift in Sources */,
+				F234C9132789B64E00504FA4 /* RequestLoggingPlugin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F234C8D72789881F00504FA4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F234C8D82789881F00504FA4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F234C8DC2789882000504FA4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -364,7 +515,6 @@
 				INFOPLIST_FILE = EmotionLine/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -393,7 +543,6 @@
 				INFOPLIST_FILE = EmotionLine/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
