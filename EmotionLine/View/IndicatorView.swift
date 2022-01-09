@@ -19,6 +19,11 @@ final class IndicatorView: UIView {
         super.didMoveToSuperview()
         
         addSubview(indicatorView)
+        
+        indicatorView.snp.makeConstraints { make in
+            make.size.equalTo(30)
+            make.center.equalToSuperview()
+        }
     }
     
     func startAnimating() {

@@ -15,5 +15,8 @@ target 'EmotionLine' do
   pod 'RxViewController'
   pod 'Charts'
   pod 'RxDataSources'
+  pod 'FSCalendar'
+  pod 'ReusableKit/RxSwift'
+  pod 'Kingfisher'
 
 end

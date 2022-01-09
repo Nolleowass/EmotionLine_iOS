@@ -22,7 +22,7 @@ protocol EmotionLineServiceProtocol {
     func createDiary(_ content: String) -> Single<Void>
     func editDiary(_ diaryId: Int, _ content: String) -> Single<Void>
     func deleteDiary(_ diaryId: Int) -> Single<Void>
-    func getDiaryList(_ userId: Int, _ year: Int, _ month: Int) -> Single<[Diary]>
+    func getDiaryList(_ userId: String, _ year: Int, _ month: Int) -> Single<[Diary]>
     
     
     // MARK: - Profile
@@ -34,6 +34,7 @@ protocol EmotionLineServiceProtocol {
     
     func checkIsLogin() -> Bool
     func logout()
+    func getCurrentUserId() -> String
 }
 
 final class EmotionLineService: EmotionLineServiceProtocol {
@@ -47,10 +48,12 @@ final class EmotionLineService: EmotionLineServiceProtocol {
     
     
     func login(_ id: String, _ password: String) -> Observable<Void> {
-        return network.requestObject(.login(id, password), type: User.self)
+        return network.requestObject(.login(id, password), type: LoginResponse.self)
             .asObservable()
-            .flatMap { [weak self] user -> Observable<Void> in
+            .flatMap { [weak self] response -> Observable<Void> in
+                let user = User(accountId: 0, isPublic: true, userId: response.userId, profileImageUrl: nil, username: "")
                 self?.userDefaultsService.setUser(user: user)
+                self?.userDefaultsService.setToken(token: response.token)
                 return Observable.just(Void())
             }
     }
@@ -79,8 +82,9 @@ final class EmotionLineService: EmotionLineServiceProtocol {
         return network.requestWithoutMapping(.deleteDiary(diaryId))
     }
     
-    func getDiaryList(_ userId: Int, _ year: Int, _ month: Int) -> Single<[Diary]> {
-        return network.requestArray(.getDiaryList(userId, year, month), type: Diary.self)
+    func getDiaryList(_ userId: String, _ year: Int, _ month: Int) -> Single<[Diary]> {
+        return network.requestObject(.getDiaryList(userId, year, month), type: List<Diary>.self)
+            .map { $0.list }
     }
     
     func anotherProfileList() -> Single<[User]> {
@@ -99,5 +103,10 @@ final class EmotionLineService: EmotionLineServiceProtocol {
     func logout() {
         userDefaultsService.deleteUser()
         userDefaultsService.deleteToken()
+    }
+    
+    func getCurrentUserId() -> String {
+        let user = userDefaultsService.getUser()
+        return user?.userId ?? ""
     }
 }

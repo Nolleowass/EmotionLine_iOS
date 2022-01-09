@@ -6,6 +6,7 @@
 //
 
 import ReactorKit
+import UIKit
 
 final class LoginViewController:
     UIViewController,
@@ -23,22 +24,35 @@ final class LoginViewController:
         static let idLabelTop: CGFloat = 40.0
     }
     
+    let logoImage = UIImageView().then {
+        $0.image = UIImage(named: "Logo")
+    }
+    
     let idLabel = UILabel().then {
         $0.text = "아이디"
+        $0.textColor = UIColor.tintColor
     }
-    let idTextField = UITextField()
+    let idTextField = UITextField().then {
+        $0.borderStyle = .roundedRect
+    }
     let passwordLabel = UILabel().then {
         $0.text = "비밀번호"
+        $0.textColor = UIColor.tintColor
     }
-    let passwordTextField = UITextField()
+    let passwordTextField = UITextField().then {
+        $0.borderStyle = .roundedRect
+        $0.returnKeyType = .done
+    }
     let findIdOrPasswordButton = UIButton().then {
         $0.setTitle("아이디/비밀번호 찾기", for: .normal)
     }
     let loginButton = UIButton().then {
         $0.setTitle("로그인", for: .normal)
+        $0.backgroundColor = UIColor.tintColor
     }
     let registerButton = UIButton().then {
         $0.setTitle("회원가입", for: .normal)
+        $0.setTitleColor(.black, for: .normal)
     }
     
     let indicatorView = IndicatorView()
@@ -50,7 +64,7 @@ final class LoginViewController:
     
     init(reactor: Reactor) {
         defer { self.reactor = reactor }
-        
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -62,6 +76,17 @@ final class LoginViewController:
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hideKeyboardWhenTappedAround()
+        setupView()
+        setupLayout()
+    }
+    
+    private func setupView() {
+        view.backgroundColor = .white
+    }
+    
+    private func setupLayout() {
+        view.addSubview(logoImage)
         view.addSubview(idLabel)
         view.addSubview(idTextField)
         view.addSubview(passwordLabel)
@@ -69,11 +94,15 @@ final class LoginViewController:
         view.addSubview(loginButton)
         view.addSubview(registerButton)
         view.addSubview(indicatorView)
-    }
-    
-    private func setupLayout() {
+        view.addSubview(findIdOrPasswordButton)
+        
+        logoImage.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(77.0)
+        }
+        
         idLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(Metric.idLabelTop)
+            make.top.equalTo(logoImage.snp.bottom).offset(Metric.idLabelTop)
             make.left.equalToSuperview().offset(Metric.leftRightPadding)
         }
         
@@ -82,31 +111,32 @@ final class LoginViewController:
             make.left.right.equalToSuperview().inset(Metric.leftRightPadding)
             make.height.equalTo(Metric.textFieldHeight)
         }
-        
+
         passwordLabel.snp.makeConstraints { make in
             make.top.equalTo(idTextField.snp.bottom).offset(25.0)
             make.left.equalToSuperview().offset(Metric.leftRightPadding)
         }
-        
+
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(passwordLabel.snp.bottom).offset(Metric.idLabelPadding)
             make.left.right.equalToSuperview().inset(Metric.leftRightPadding)
             make.height.equalTo(Metric.textFieldHeight)
         }
-        
+
         findIdOrPasswordButton.snp.makeConstraints { make in
             make.top.equalTo(passwordTextField.snp.bottom).offset(Metric.idLabelPadding)
-            make.right.equalToSuperview().offset(-Metric.leftRightPadding)
+            make.right.equalTo(passwordTextField.snp.right)
         }
-        
-        registerButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-        }
-        
+
         loginButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(Metric.leftRightPadding)
-            make.bottom.equalTo(registerButton.snp.top)
+            make.bottom.equalTo(registerButton.snp.top).offset(5)
             make.height.equalTo(Metric.textFieldHeight)
+        }
+
+        registerButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().offset(-20)
+            make.centerX.equalToSuperview()
         }
     }
 }
@@ -135,13 +165,39 @@ extension LoginViewController {
             .distinctUntilChanged()
             .bind(to: indicatorView.rx.isAnimating)
             .disposed(by: disposeBag)
+        
+        reactor.state.map { $0.viewType }
+            .distinctUntilChanged()
+            .bind(onNext: { [weak self] viewType in
+                guard let self = self else { return }
+                switch viewType {
+                case .feed:
+                    let viewController = FeedViewController.makeViewController(service: reactor.service)
+                    viewController.modalPresentationStyle = .fullScreen
+                    self.present(viewController, animated: true)
+                default:
+                    return
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
 
 extension LoginViewController {
-    static func makeViewController() -> LoginViewController {
-        let emotionLineService = EmotionLineService()
-        let reactor = Reactor(emotionLineService: emotionLineService)
+    static func makeViewController(service: EmotionLineServiceProtocol) -> LoginViewController {
+        let reactor = Reactor(service: service)
         return LoginViewController(reactor: reactor)
+    }
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

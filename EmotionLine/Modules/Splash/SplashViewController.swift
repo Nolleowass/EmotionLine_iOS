@@ -21,7 +21,7 @@ final class SplashViewController:
     // MARK: - UI
     
     let logoImageView = UIImageView().then {
-        $0.image = UIImage(named: "")
+        $0.image = UIImage(named: "SplashImage")
     }
     
     
@@ -32,7 +32,7 @@ final class SplashViewController:
     
     init(reactor: Reactor) {
         defer { self.reactor = reactor }
-        
+        super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
@@ -45,19 +45,19 @@ final class SplashViewController:
         super.viewDidLoad()
         
         setupLayout()
-        setupView
+        setupView()
     }
     
     private func setupLayout() {
         view.addSubview(logoImageView)
         
         logoImageView.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.edges.equalToSuperview()
         }
     }
     
     private func setupView() {
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor(named: "TintColor")
     }
 }
 
@@ -82,26 +82,28 @@ extension SplashViewController {
             .bind(onNext: { [weak self] viewType in
                 guard let self = self else { return }
                 
-                switch viewType {
-                case .feed:
-                    let viewController = FeedViewController.makeViewController()
-                    self.present(viewController, animated: true)
-                case .login:
-                    let viewController = LoginViewController.makeViewController()
-                    self.present(viewController, animated: true)
-                default:
-                    return
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    switch viewType {
+                    case .feed:
+                        let viewController = FeedViewController.makeViewController(service: reactor.service)
+                        viewController.modalPresentationStyle = .fullScreen
+                        self.present(viewController, animated: true)
+                    case .login:
+                        let viewController = LoginViewController.makeViewController(service: reactor.service)
+                        viewController.modalPresentationStyle = .fullScreen
+                        self.present(viewController, animated: true)
+                    default:
+                        return
+                    }
                 }
             })
             .disposed(by: disposeBag)
-        
     }
 }
 
 extension SplashViewController {
-    static func makeViewController() -> SplashViewController {
-        let userDefaultService = UserDefaultsService()
-        let reactor = Reactor(userDefaultsService: userDefaultService)
+    static func makeViewController(service: EmotionLineServiceProtocol) -> SplashViewController {
+        let reactor = Reactor(service: service)
         return SplashViewController(reactor: reactor)
     }
 }

@@ -14,29 +14,31 @@ final class LoginViewReactor: Reactor {
     
     enum Mutation {
         case setLoading(isLoading: Bool)
+        case setViewType(ViewType)
     }
     
     struct State {
         var isLoading: Bool = false
+        var viewType: ViewType = .none
     }
     
     let initialState: State
     
-    let emotionLineService: EmotionLineServiceProtocol
+    let service: EmotionLineServiceProtocol
     
     init(
-        emotionLineService: EmotionLineServiceProtocol
+        service: EmotionLineServiceProtocol
     ) {
         initialState = State()
-        self.emotionLineService = emotionLineService
+        self.service = service
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .login(let id, let password):
-            let loginProcess = emotionLineService.login(id, password)
+            let loginProcess = service.login(id, password)
                 .flatMap { _ -> Observable<Mutation> in
-                    return Observable.empty()
+                    return .just(.setViewType(.feed))
                 }
             
             return .concat([
@@ -53,6 +55,8 @@ final class LoginViewReactor: Reactor {
         switch mutation {
         case .setLoading(let isLoading):
             state.isLoading = isLoading
+        case .setViewType(let viewType):
+            state.viewType = viewType
         }
         
         return state

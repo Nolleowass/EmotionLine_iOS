@@ -10,7 +10,7 @@ import Moya
 protocol BaseAPI: TargetType {}
 
 extension BaseAPI {
-    var baseURL: URL { URL(string: "")! }
+    var baseURL: URL { URL(string: "https://nolleowass-api.jasonchoi.dev")! }
     
     var method: Method { .get }
     

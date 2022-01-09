@@ -29,19 +29,19 @@ final class SplashViewReactor: Reactor {
     }
     
     let initialState: State
-    let userDefaultsService: UserDefaultsServiceProtocol
+    let service: EmotionLineServiceProtocol
     
     init(
-        userDefaultsService: UserDefaultsServiceProtocol
+        service: EmotionLineServiceProtocol
     ) {
         initialState = State()
-        self.userDefaultsService = userDefaultsService
+        self.service = service
     }
     
     func mutate(action: Action) -> Observable<Mutation> {
         switch action {
         case .checkLogin:
-            let isLogin = userDefaultsService.checkIsLogin()
+            let isLogin = service.checkIsLogin()
             let viewType: ViewType = isLogin ? .feed : .login
             return .just(.setViewType(viewType))
         }

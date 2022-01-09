@@ -19,7 +19,7 @@ enum EmotionLineAPI {
     case createDiary(_ content: String)
     case editDiary(_ diaryId: Int, _ content: String)
     case deleteDiary(_ diaryId: Int)
-    case getDiaryList(_ userId: Int, _ year: Int, _ month: Int)
+    case getDiaryList(_ userId: String, _ year: Int, _ month: Int)
     
     /// 내 프로필을 조회한 사람
     case anotherProfileList
@@ -63,7 +63,14 @@ extension EmotionLineAPI: BaseAPI {
     }
     
     var headers: [String: String]? {
-        return ["Content-Type": "application/json"]
+        var header = [String: String]()
+        header = ["Content-Type": "application/json"]
+        
+        if let token = UserDefaultsService().getToken() {
+            header = ["token": token]
+        }
+        
+        return header
     }
     
     var parameters: [String: Any]? {
@@ -101,6 +108,8 @@ extension EmotionLineAPI: BaseAPI {
     
     public var parameterEncoding: ParameterEncoding {
         switch self {
+        case .getDiaryList:
+            return URLEncoding.default
         default:
             return JSONEncoding.default
         }

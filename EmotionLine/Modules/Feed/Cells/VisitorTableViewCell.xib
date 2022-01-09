@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="168" id="KGk-i7-Jjw" customClass="VisitorTableViewCell" customModule="EmotionLine" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="402" height="168"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="402" height="168"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방문한 사람" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdR-WS-A0R">
+                        <rect key="frame" x="20" y="20" width="82.5" height="21"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="외 몇명이 방문했어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opd-BQ-aus">
+                        <rect key="frame" x="20" y="50" width="362" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="VisitorTableViewCell" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="eBW-5w-7qf">
+                        <rect key="frame" x="20" y="81" width="362" height="67"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gt8-9E-58U">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="opd-BQ-aus" firstAttribute="top" secondItem="PdR-WS-A0R" secondAttribute="bottom" constant="9" id="DMv-Kt-mxq"/>
+                    <constraint firstAttribute="bottom" secondItem="eBW-5w-7qf" secondAttribute="bottom" constant="20" id="J8o-Qw-OjU"/>
+                    <constraint firstAttribute="trailing" secondItem="eBW-5w-7qf" secondAttribute="trailing" constant="20" id="M6n-gY-i4W"/>
+                    <constraint firstItem="eBW-5w-7qf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="R5b-OI-38Y"/>
+                    <constraint firstAttribute="trailing" secondItem="opd-BQ-aus" secondAttribute="trailing" constant="20" id="SSK-gL-7Rc"/>
+                    <constraint firstItem="PdR-WS-A0R" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="iAk-ME-vEX"/>
+                    <constraint firstItem="eBW-5w-7qf" firstAttribute="top" secondItem="opd-BQ-aus" secondAttribute="bottom" constant="10" id="jbi-co-XTI"/>
+                    <constraint firstItem="opd-BQ-aus" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="nRC-L6-Rvr"/>
+                    <constraint firstItem="PdR-WS-A0R" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="weF-NG-wsf"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="collectionView" destination="eBW-5w-7qf" id="h8x-Cp-khp"/>
+                <outlet property="label" destination="opd-BQ-aus" id="4Ke-Dd-788"/>
+            </connections>
+            <point key="canvasLocation" x="191.30434782608697" y="157.36607142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

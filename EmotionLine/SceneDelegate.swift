@@ -15,7 +15,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let reactor = SplashViewReactor()
+        let emotionLineService = EmotionLineService()
+        let reactor = SplashViewReactor(service: emotionLineService)
         let rootViewController = SplashViewController(reactor: reactor)
 
         window?.rootViewController = rootViewController

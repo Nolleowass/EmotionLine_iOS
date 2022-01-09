@@ -4,6 +4,8 @@ PODS:
     - Charts/Core (= 3.6.0)
   - Charts/Core (3.6.0)
   - Differentiator (4.0.1)
+  - FSCalendar (2.8.2)
+  - Kingfisher (7.1.2)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (14.0.0):
@@ -12,6 +14,11 @@ PODS:
   - ReactorKit (2.1.1):
     - RxSwift (~> 5.0)
     - WeakMapTable (~> 1.1)
+  - ReusableKit/Core (3.0.0)
+  - ReusableKit/RxSwift (3.0.0):
+    - ReusableKit/Core
+    - RxCocoa (~> 5.0)
+    - RxSwift (~> 5.0)
   - RxCocoa (5.1.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -31,8 +38,11 @@ PODS:
 
 DEPENDENCIES:
   - Charts
+  - FSCalendar
+  - Kingfisher
   - Moya/RxSwift
   - ReactorKit
+  - ReusableKit/RxSwift
   - RxCocoa
   - RxDataSources
   - RxSwift
@@ -45,8 +55,11 @@ SPEC REPOS:
     - Alamofire
     - Charts
     - Differentiator
+    - FSCalendar
+    - Kingfisher
     - Moya
     - ReactorKit
+    - ReusableKit
     - RxCocoa
     - RxDataSources
     - RxRelay
@@ -60,8 +73,11 @@ SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   Differentiator: 886080237d9f87f322641dedbc5be257061b0602
+  FSCalendar: e6a2eb9c571bf0719ed797ef807e08426753c241
+  Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   ReactorKit: 6d894a20c3d508344320901cd8e386fde92df4b6
+  ReusableKit: e5f853ad4652e411f96b6119b2488afa12929be6
   RxCocoa: 32065309a38d29b5b0db858819b5bf9ef038b601
   RxDataSources: efee07fa4de48477eca0a4611e6d11e2da9c1114
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
@@ -71,6 +87,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   WeakMapTable: 05c694ce8439a7a9ebabb56187287a63c57673d6
 
-PODFILE CHECKSUM: ffb6c409d91ee846a5cb2a6c46e6a9079568d124
+PODFILE CHECKSUM: 3543a1c83fc63fcf83167bbbea45dd49145bad79
 
 COCOAPODS: 1.11.2

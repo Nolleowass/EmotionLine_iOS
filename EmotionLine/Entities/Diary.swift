@@ -12,7 +12,7 @@ struct Diary: Codable {
     let accountId: Int
     let content: String
     let emotionPoint: Int
-    let createAt: Date
+    let createAt: String
     
     enum CodingKeys: String, CodingKey {
         case diaryId = "diary_id"
